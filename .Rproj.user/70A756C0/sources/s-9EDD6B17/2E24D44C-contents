@@ -1,0 +1,34 @@
+---
+title: First Blog Post
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Summary of data
+
+```{r cars}
+mpg <- ggplot2::mpg
+str(mpg)
+```
+
+## Summary Table
+
+```{r pressure, echo=FALSE}
+mpg %>% 
+  group_by(class) %>% 
+  summarise(avgHWY = mean(hwy))
+```
+
+## Including Plots
+
+```{r plot, echo=FALSE}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+
+
